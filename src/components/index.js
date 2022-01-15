@@ -1,0 +1,10 @@
+export { default as Layout } from "./Layout";
+export { default as Header } from "./Header";
+export { default as Hero } from "./Hero";
+export { default as Container } from "./Container";
+export { default as Card } from "./Card";
+export { default as Skeleton } from "./Skeleton";
+export { default as TopRated } from "./TopRated";
+export { default as NowPlaying } from "./NowPlaying";
+export { default as Popular } from "./Popular";
+export { default as Upcoming } from "./Upcoming";

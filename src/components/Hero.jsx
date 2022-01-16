@@ -14,17 +14,19 @@ export default function Hero() {
         <Container>
           <div className="flex flex-col max-w-md gap-2 ">
             <h1
-              className={`text-white text-4xl sm:text-6xl font-extrabold opacity-0 translate-y-10 ${
-                isLoaded &&
-                "opacity-100 transition duration-500 delay-100 ease-out translate-y-0"
+              className={`text-white text-4xl sm:text-6xl font-extrabold  ${
+                isLoaded
+                  ? "opacity-100 transition duration-500 delay-100 ease-out translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
             >
               Movies
             </h1>
             <p
-              className={`text-white text-sm sm:text-base opacity-0 translate-y-10 ${
-                isLoaded &&
-                "opacity-100 transition duration-500 delay-200 ease-out translate-y-0"
+              className={`text-white text-sm sm:text-base ${
+                isLoaded
+                  ? "opacity-100 transition duration-500 delay-200 ease-out translate-y-0"
+                  : "opacity-0 translate-y-10"
               }`}
             >
               Movies move us like nothing else can, whether they're scary,

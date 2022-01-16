@@ -19,7 +19,7 @@ export default function useMovie(props) {
           setMovies({
             ...movies,
             status: STATE_STATUS.RESOLVED,
-            data: res.results,
+            data: res.results.slice(0, 11),
           })
         )
         .catch(() => {

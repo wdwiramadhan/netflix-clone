@@ -1,7 +1,7 @@
 function Card(props) {
   const { movie } = props;
   return (
-    <div className="flex flex-col flex-shrink-0 w-48 sm:w-60 gap-2 transform ease-in-out duration-300 hover:scale-[1.03]">
+    <div className="flex flex-col flex-shrink-0 w-48 sm:w-60 gap-2 transform ease-in-out duration-300 hover:scale-[1.04]">
       <div className="relative">
         <img
           src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}

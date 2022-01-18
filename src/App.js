@@ -8,7 +8,7 @@ function NowPlaying() {
   const { status, data } = useMovie({ path: "now_playing" });
   const isLoading = status === STATE_STATUS.PENDING;
   return (
-    <InView triggerOnce>
+    <InView triggerOnce rootMargin="-20% 0px">
       {({ inView, ref }) => (
         <section
           ref={ref}
@@ -25,7 +25,9 @@ function NowPlaying() {
               </h2>
               <div className="flex overflow-x-scroll hide-scrollbar gap-2 p-2 -mx-2">
                 {isLoading &&
-                  [...Array(8)].map((e, idx) => <Skeleton key={idx} />)}
+                  [...Array(8)].map((e, idx) => (
+                    <Skeleton key={idx} className="h-72 w-48 sm:h-80 sm:w-56" />
+                  ))}
                 {!isLoading &&
                   data.map((movie, idx) => <Card movie={movie} key={idx} />)}
               </div>
@@ -41,7 +43,7 @@ function Popular() {
   const { status, data } = useMovie({ path: "popular" });
   const isLoading = status === STATE_STATUS.PENDING;
   return (
-    <InView triggerOnce>
+    <InView triggerOnce rootMargin="-20% 0px">
       {({ inView, ref }) => (
         <section
           ref={ref}
@@ -58,7 +60,9 @@ function Popular() {
               </h2>
               <div className="flex overflow-x-scroll hide-scrollbar gap-2 p-2 -mx-2">
                 {isLoading &&
-                  [...Array(8)].map((e, idx) => <Skeleton key={idx} />)}
+                  [...Array(8)].map((e, idx) => (
+                    <Skeleton key={idx} className="h-72 w-48 sm:h-80 sm:w-56" />
+                  ))}
                 {!isLoading &&
                   data.map((movie, idx) => <Card movie={movie} key={idx} />)}
               </div>
@@ -91,7 +95,9 @@ function TopRated() {
               </h2>
               <div className="flex overflow-x-scroll hide-scrollbar gap-2 p-2 -mx-2">
                 {isLoading &&
-                  [...Array(8)].map((e, idx) => <Skeleton key={idx} />)}
+                  [...Array(8)].map((e, idx) => (
+                    <Skeleton key={idx} className="h-72 w-48 sm:h-80 sm:w-56" />
+                  ))}
                 {!isLoading &&
                   data.map((movie, idx) => <Card movie={movie} key={idx} />)}
               </div>
@@ -107,7 +113,7 @@ function Upcoming() {
   const { status, data } = useMovie({ path: "upcoming" });
   const isLoading = status === STATE_STATUS.PENDING;
   return (
-    <InView triggerOnce>
+    <InView triggerOnce rootMargin="-20% 0px">
       {({ inView, ref }) => (
         <section
           ref={ref}
@@ -124,7 +130,9 @@ function Upcoming() {
               </h2>
               <div className="flex overflow-x-scroll hide-scrollbar gap-2 p-2 -mx-2">
                 {isLoading &&
-                  [...Array(8)].map((e, idx) => <Skeleton key={idx} />)}
+                  [...Array(8)].map((e, idx) => (
+                    <Skeleton key={idx} className="h-72 w-48 sm:h-80 sm:w-56" />
+                  ))}
                 {!isLoading &&
                   data.map((movie, idx) => <Card movie={movie} key={idx} />)}
               </div>
@@ -140,7 +148,7 @@ export default function App() {
   return (
     <Layout>
       <Hero />
-      <div className="flex flex-col gap-8 sm:gap-16">
+      <div className="flex flex-col gap-8 sm:gap-12">
         <TopRated />
         <Upcoming />
         <NowPlaying />
